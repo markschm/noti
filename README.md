@@ -6,7 +6,7 @@ Get notified when your maven build has completed
 Add a new PATH variable to the computer with the location of the shell file:
 C:\...\maven_noti\exec
 
-To build project replaced mvn clean install with:
+To build project replace mvn clean install with:
 > mvnc
 
 Default command: mvn clean install
