@@ -1,0 +1,18 @@
+#!/bin/bash
+
+TIME=5
+COMMAND='mvn clean install'
+
+
+###################################
+directory=$(basename "$PWD")
+$COMMAND
+
+if [ $? == 0 ]; then
+    status="BUILD SUCCESS"
+else
+    status="BUILD FAILED"
+fi
+
+echo -e "\a"
+msg $(whoami) /TIME:$TIME "$status:     $directory"
