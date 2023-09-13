@@ -1,12 +1,15 @@
 #!/bin/bash
 
 TIME=5
-COMMAND='mvn clean install'
-
+command='mvn clean install'
 
 ###################################
-directory=$(basename "$PWD")
-$COMMAND
+
+if [ $# -gt 0 ]; then 
+    command="$command $@"
+fi
+
+$command
 
 if [ $? == 0 ]; then
     status="BUILD SUCCESS"
@@ -15,4 +18,4 @@ else
 fi
 
 echo -e "\a"
-msg $(whoami) /TIME:$TIME "$status:     $directory"
+msg $(whoami) /TIME:$TIME "$status:     $(basename "$PWD")"

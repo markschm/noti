@@ -12,6 +12,7 @@ To build project replace mvn clean install with:
 Default command: mvn clean install
 Default time out: 5s
 Both are configurable inside mvnc file
+Works with command line flags
 ```
 
 ## Issue
