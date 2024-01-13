@@ -1,0 +1,14 @@
+#!/bin/bash
+
+TIME=5
+###################################
+$@
+
+if [ $? == 0 ]; then
+    status="BUILD SUCCESS"
+else
+    status="BUILD FAILED"
+fi
+
+echo -e "\a"
+msg $(whoami) /TIME:$TIME "$status:     $(basename "$PWD")"
